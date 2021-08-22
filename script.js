@@ -1,3 +1,4 @@
+var validDrag = false;
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
@@ -39,12 +40,17 @@ function dragElement(elmnt) {
     elmnt.style.top = (tperc * 100) + "%";
     elmnt.style.left = (lperc * 100) + "%";
 	elmnt.style.position = "absolute";
+	
+	validDrag = tperc < 0.74;
   }
 
   function closeDragElement() {
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
+	if (validDrag == false) {
+		elmnt.style.left = elmnt.style.top = elmnt.style.position = "";
+	}
   }
 }
 
@@ -52,4 +58,5 @@ document.addEventListener("DOMContentLoaded", function(){
 	for (let e of document.getElementById("draggable-items").children) {
 		dragElement(e);
 	}
+	let test = document.getElementById("tier-container")
 });
