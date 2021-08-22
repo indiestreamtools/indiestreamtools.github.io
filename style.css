@@ -43,8 +43,8 @@ body {
 	flex-wrap: wrap;
 }
 .draggable {
-	height:	10vh;
-	width: 10vh;
+	height:	8vh;
+	width: 8vh;
     background-position: center;
     background-size: cover;
     flex: none;

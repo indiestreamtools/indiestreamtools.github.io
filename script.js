@@ -32,8 +32,12 @@ function dragElement(elmnt) {
 	if (tpos < 0) tpos = 0;
 	lpos = (elmnt.offsetLeft - pos1);
 	if (lpos < 0) lpos = 0;
-    elmnt.style.top = tpos + "px";
-    elmnt.style.left = lpos + "px";
+	
+	tperc = tpos / document.documentElement.clientHeight;
+	lperc = lpos / document.documentElement.clientWidth;
+	
+    elmnt.style.top = (tperc * 100) + "%";
+    elmnt.style.left = (lperc * 100) + "%";
 	elmnt.style.position = "absolute";
   }
 
