@@ -8,9 +8,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
 		let first = elem.getElementsByTagName("span")[0]
 		if (out.stream != null) {
 			first.textContent = "indiebear is streaming " + out.stream.game;
+			slideOut(elem);
+			elem.classList.add("live");
 		}
 		elem.style = "right: -" + (elem.offsetWidth - 68) + "px";
-		slideOut(elem);
 	}).catch();
 });
 function slideOut(elem) {

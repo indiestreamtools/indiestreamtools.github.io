@@ -143,6 +143,9 @@ body {
     float: left;
     padding: 0 10px 0 23px;
 }
+.live > img {
+	animation: live .45s ease-in-out forwards infinite;
+}
 #twitch-info:hover {
     right: 0 !important;
 }
@@ -167,6 +170,7 @@ body {
 #discord-info > img {
 	height: 40px;
 	margin-right: 15px;
+	animation: rotate .5s ease-in-out forwards;
 }
 
 @keyframes on-load {
@@ -193,4 +197,46 @@ body {
     opacity: 1;
     transform: scale(1) translateY(calc(var(--base-grid)*5));
   }
+}
+@keyframes live {
+	0% {
+		margin-bottom: 0;
+	}
+	25% {
+		margin-bottom: 7px;
+	}
+	75% {
+		margin-bottom: -7px;
+	}
+	100% {
+		margin-bottom: 0;
+	}
+}
+@keyframes live {
+	0% {
+		margin-bottom: 0;
+	}
+	25% {
+		margin-bottom: 7px;
+	}
+	75% {
+		margin-bottom: -7px;
+	}
+	100% {
+		margin-bottom: 0;
+	}
+}
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	46% {
+		margin-bottom: transform: rotate(180deg);
+	}
+	92% {
+		transform: rotate(370deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
