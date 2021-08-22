@@ -2,6 +2,7 @@ body {
 	background: #111;
 	font-family: sans-serif;
 	color: #111;
+	overflow: hidden;
 }
 #main-container {
 	height: 100%;
@@ -39,6 +40,7 @@ body {
 }
 #draggable-items {
 	display: flex;
+	flex-wrap: wrap;
 }
 .draggable {
 	height:	10vh;
