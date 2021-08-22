@@ -9,6 +9,17 @@ function dragElement(elmnt) {
     elmnt.onmousedown = dragMouseDown;
   }
 
+  elmnt.addEventListener('touchmove', function(e) {
+    // grab the location of touch
+    var touchLocation = e.targetTouches[0];
+    
+    // assign box new coordinates based on the touch.
+    elmnt.style.left = touchLocation.pageX + 'px';
+    elmnt.style.top = touchLocation.pageY + 'px';
+	elmnt.style.position = "absolute";
+
+	})
+  
   function dragMouseDown(e) {
     e = e || window.event;
     e.preventDefault();
