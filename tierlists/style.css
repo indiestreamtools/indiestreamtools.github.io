@@ -9,7 +9,7 @@ body {
 	width: 100%;
 }
 #tier-container {
-	background-image: linear-gradient(to bottom, red 0%, red 7%, orange 18%, orange 30%, yellow 40%, yellow 46%, green 54%, green 63%, blue 73%, blue 77%, indigo 87%, indigo 100%);
+	background-image: linear-gradient(to bottom, red 0%, red 7%, orange 18%, orange 30%, yellow 40%, yellow 46%, #00ff00 54%, #00ff00 63%, #005aff 73%, #005aff 77%, #3e00d4 90%, #3e00d4 100%);
 	filter: grayscale(0.25);
 	border-radius: 20px 21px 27px 20px;
 }
