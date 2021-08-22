@@ -18,8 +18,9 @@ html {
 body {
   background-size: 112px 112px,112px 112px,56px 56px,56px 56px,28px 28px,28px 28px;
   font-family: Josefin Sans, sans-serif;
-    margin: 0;
+  margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .links {
@@ -120,6 +121,52 @@ body {
   transition: all .3s cubic-bezier(.37,.74,.15,1.65);
   transform: scale(1.1);
   opacity: 1;
+}
+
+#twitch-info {
+	background: #70008c;
+    color: white;
+    height: 61px;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    border-radius: 50px 0 0 50px;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+	transition: right ease-in-out 0.15s;
+	padding-right: 10px;
+}
+#twitch-info > img {
+	height: 40px;
+    float: left;
+    padding: 0 10px 0 23px;
+}
+#twitch-info:hover {
+    right: 0 !important;
+}
+#discord-info {
+	background: #5865f2;
+    color: white;
+    height: 61px;
+    width: 215px;
+    position: absolute;
+    right: -135px;
+    bottom: 0;
+    border-radius: 50px 0 0 50px;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+	transition: right ease-in-out 0.15s;
+}
+#discord-info:hover {
+    right: 0;
+}
+#discord-info > img {
+	height: 40px;
+	margin-right: 15px;
 }
 
 @keyframes on-load {
