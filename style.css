@@ -1,53 +1,149 @@
+:root {
+  --base-grid: 8px;
+  --colour-white: #fff;
+  --colour-black: #1a1a1a;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(-170deg, #111 20%,#333);
+  background-position: 100%;
+}
+
 body {
-	background: #111;
-	font-family: sans-serif;
-	color: #111;
-	overflow: hidden;
+  background-size: 112px 112px,112px 112px,56px 56px,56px 56px,28px 28px,28px 28px;
+  font-family: Josefin Sans, sans-serif;
+    margin: 0;
+  padding: 0;
 }
-#main-container {
-	height: 100%;
-	width: 100%;
+
+.links {
+  --link-size: calc(var(--base-grid)*20);
+  color: var(--colour-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
 }
-#tier-container {
-	background-image: linear-gradient(to bottom, red 0%, red 7%, orange 18%, orange 30%, yellow 40%, yellow 46%, green 54%, green 63%, blue 73%, blue 77%, indigo 87%, indigo 100%);
-	filter: grayscale(0.25);
+
+.links__list {
+  position: relative;
+  list-style: none;
 }
-.tier-row {
-	height: 13%;
-	width: 100%;
-	display: flex;
-	border-bottom: solid 2px #111;
+
+.links__item {
+  width: var(--link-size);
+  height: var(--link-size);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: calc(var(--link-size)/-2);
+  margin-left: calc(var(--link-size)/-2);
+  --angle: calc(360deg/var(--item-total));
+  --rotation: calc(140deg + var(--angle)*var(--item-count));
+  transform: rotate(var(--rotation)) translate(calc(var(--link-size) + var(--base-grid)*2)) rotate(calc(var(--rotation)*-1));
 }
-.tier-label {
-	align-items: center;
-    justify-content: center;
-	display: flex;
-    min-height: 80px;
-	min-width: 80px;
-	width: 13vh;
-    border-right: solid 2px #111;
+
+.links__link {
+  opacity: 0;
+  animation: on-load .3s ease-in-out forwards;
+  animation-delay: calc(var(--item-count)*150ms);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--colour-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
 }
-.tier-label > span {
-	overflow: hidden;
-    text-align: center;
-    margin: 5px;
-	font-weight: bold;
-	font-size: 4vh;
+
+.links__link > img {
+	height: 72px;
+	width: 72px;
 }
-.tier-body {
-	flex: 1;
-	background: #191919fa;
+
+.links__icon {
+  width: calc(var(--base-grid)*8);
+  height: calc(var(--base-grid)*8);
+  transition: all .3s ease-in-out;
+  fill: var(--colour-black);
 }
-#draggable-items {
-	display: flex;
-	flex-wrap: wrap;
+
+.links__text {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  height: calc(var(--base-grid)*2);
+  font-size: calc(var(--base-grid)*2);
+  display: none;
+  bottom: calc(var(--base-grid)*8.5);
+  animation: text .3s ease-in-out forwards;
 }
-.draggable {
-	height:	8vh;
-	width: 8vh;
-    background-position: center;
-	background-size: contain;
-    background-repeat: no-repeat;
-    flex: none;
-    cursor: pointer;
+
+.links__link:after {
+  content: "";
+  background-color: transparent;
+  width: var(--link-size);
+  height: var(--link-size);
+  border: 2px dashed var(--colour-white);
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .3s cubic-bezier(.53,-.67,.73,.74);
+  transform: none;
+  opacity: 0;
+}
+
+.links__link:hover .links__icon {
+  transition: all .3s ease-in-out;
+  transform: translateY(calc(var(--base-grid)*-1));
+}
+
+.links__link:hover .links__text {
+  display: block;
+}
+
+.links__link:hover:after {
+  transition: all .3s cubic-bezier(.37,.74,.15,1.65);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@keyframes on-load {
+  0% {
+    opacity: 0;
+    transform: scale(.3);
+  }
+  70% {
+    opacity: .7;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes text {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(calc(var(--base-grid)*5));
+  }
 }
