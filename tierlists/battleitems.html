@@ -1,42 +1,46 @@
 <html>
+<head>
+  <title>Unite Battle Item Tierlist</title>
+</head>
+<script>var TYPE = "battleitem"</script>
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src="script.js"></script> 
 <div id="main-container">
 <div id="tier-container">
 	<div class="tier-row">
-		<div class="tier-label"><span>S</span></div>
+		<div contenteditable="true" class="tier-label"><span>S</span></div>
 		<div class="tier-body"></div>
 	</div>
 	<div class="tier-row">
-		<div class="tier-label"><span>A</span></div>
+		<div contenteditable="true" class="tier-label"><span>A</span></div>
 		<div class="tier-body"></div>
 	</div>
 	<div class="tier-row">
-		<div class="tier-label"><span>B</span></div>
+		<div contenteditable="true" class="tier-label"><span>B</span></div>
 		<div class="tier-body"></div>
 	</div>
 	<div class="tier-row">
-		<div class="tier-label"><span>C</span></div>
+		<div contenteditable="true" class="tier-label"><span>C</span></div>
 		<div class="tier-body"></div>
 	</div>
 	<div class="tier-row">
-		<div class="tier-label"><span>D</span></div>
+		<div contenteditable="true" class="tier-label"><span>D</span></div>
 		<div class="tier-body"></div>
 	</div>
 	<div class="tier-row">
-		<div class="tier-label"><span>F</span></div>
+		<div contenteditable="true" class="tier-label"><span>F</span></div>
 		<div class="tier-body"></div>
 	</div>
 </div>
 <div id="draggable-items">
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/potion.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/xattack.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/xspeed.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/fluffytail.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/ejectbutton.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/slowsmoke.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/fullheal.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/goal-getter.png");'></div>
+	<div data-name="potion" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/potion.png");'></div>
+	<div data-name="xattack" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/xattack.png");'></div>
+	<div data-name="xspeed" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/xspeed.png");'></div>
+	<div data-name="fluffytail" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/fluffytail.png");'></div>
+	<div data-name="ejectbutton" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/ejectbutton.png");'></div>
+	<div data-name="slowsmoke" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/slowsmoke.png");'></div>
+	<div data-name="fullheal" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/fullheal.png");'></div>
+	<div data-name="goal-getter" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/items/goal-getter.png");'></div>
 </div>
 </div>
 <style>

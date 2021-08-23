@@ -1,61 +1,65 @@
 <html>
+<head>
+  <title>Unite Holowear Tierlist</title>
+</head>
+<script>var TYPE = "holo"</script>
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src="script.js"></script> 
 <div id="main-container">
 <div id="tier-container">
 	<div class="tier-row">
-		<div class="tier-label"><span>S</span></div>
+		<div contenteditable="true" class="tier-label"><span>S</span></div>
 		<div class="tier-body"></div>
 	</div>
 	<div class="tier-row">
-		<div class="tier-label"><span>A</span></div>
+		<div contenteditable="true" class="tier-label"><span>A</span></div>
 		<div class="tier-body"></div>
 	</div>
 	<div class="tier-row">
-		<div class="tier-label"><span>B</span></div>
+		<div contenteditable="true" class="tier-label"><span>B</span></div>
 		<div class="tier-body"></div>
 	</div>
 	<div class="tier-row">
-		<div class="tier-label"><span>C</span></div>
+		<div contenteditable="true" class="tier-label"><span>C</span></div>
 		<div class="tier-body"></div>
 	</div>
 	<div class="tier-row">
-		<div class="tier-label"><span>D</span></div>
+		<div contenteditable="true" class="tier-label"><span>D</span></div>
 		<div class="tier-body"></div>
 	</div>
 	<div class="tier-row">
-		<div class="tier-label"><span>F</span></div>
+		<div contenteditable="true" class="tier-label"><span>F</span></div>
 		<div class="tier-body"></div>
 	</div>
 </div>
 <div id="draggable-items">
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/003.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/003-beach.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/025.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/025-hip-hop.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/025-fashionable.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/068.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/068-beach.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/122.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/122-magician.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/143.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/143-beach.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/143-berry.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/282.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/282-fashionable.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/359.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/359-fashionable.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/445.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/445-beach.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/658.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/658-hero.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/658-fashionable.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/663.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/663-pilot.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/815.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/815-captain.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/830.png");'></div>
-	<div class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/830-fashionable.png");'></div>
+	<div data-name="003-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/003.png");'></div>
+	<div data-name="003-beach" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/003-beach.png");'></div>
+	<div data-name="025-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/025.png");'></div>
+	<div data-name="025-hip-hop" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/025-hip-hop.png");'></div>
+	<div data-name="025-fashionable" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/025-fashionable.png");'></div>
+	<div data-name="068-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/068.png");'></div>
+	<div data-name="068-beach" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/068-beach.png");'></div>
+	<div data-name="122-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/122.png");'></div>
+	<div data-name="122-magician" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/122-magician.png");'></div>
+	<div data-name="143-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/143.png");'></div>
+	<div data-name="143-beach" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/143-beach.png");'></div>
+	<div data-name="143-berry" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/143-berry.png");'></div>
+	<div data-name="282-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/282.png");'></div>
+	<div data-name="282-fashionable" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/282-fashionable.png");'></div>
+	<div data-name="359-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/359.png");'></div>
+	<div data-name="359-fashionable" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/359-fashionable.png");'></div>
+	<div data-name="445-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/445.png");'></div>
+	<div data-name="445-beach" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/445-beach.png");'></div>
+	<div data-name="658-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/658.png");'></div>
+	<div data-name="658-hero" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/658-hero.png");'></div>
+	<div data-name="658-fashionable" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/658-fashionable.png");'></div>
+	<div data-name="663-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/663.png");'></div>
+	<div data-name="663-pilot" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/663-pilot.png");'></div>
+	<div data-name="815-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/815.png");'></div>
+	<div data-name="815-captain" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/815-captain.png");'></div>
+	<div data-name="830-base" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/830.png");'></div>
+	<div data-name="830-fashionable" class="draggable" style='background-image: url("https://www.serebii.net/pokemonunite/pokemon/holowear/830-fashionable.png");'></div>
 </div>
 </div>
 </html>

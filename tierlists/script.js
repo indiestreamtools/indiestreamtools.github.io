@@ -57,9 +57,11 @@ function dragElement(elmnt) {
 	
 	let max = g_grid[g_grid.length-1];
 	let min = g_grid[0];
+	let attr = elmnt.getAttribute("data-name")
 	
 	if (g_tpos >= max) {
 		elmnt.style.left = elmnt.style.top = elmnt.style.position = "";
+		if (attr != null) localStorage.removeItem(TYPE+"-"+attr);
 	} else {
 		for (let i = 0; i < g_grid.length; i++) {
 			let t = g_grid[i+1];
@@ -84,9 +86,14 @@ function dragElement(elmnt) {
 		else if (g_tpos < 26) g_tpos = 24.25;
 		*/
 		if (g_tpos >= max) {
-		elmnt.style.left = elmnt.style.top = elmnt.style.position = "";
+			elmnt.style.left = elmnt.style.top = elmnt.style.position = "";
+			if (attr != null) localStorage.removeItem(TYPE+"-"+attr);
 		} else {
 			elmnt.style.top = g_tpos + "%";
+			if (attr != null) {
+				let pos = {x: elmnt.style.left, y: elmnt.style.top}
+				localStorage.setItem(TYPE+"-"+attr, JSON.stringify(pos));
+			}
 		}
 	}
 	
@@ -96,6 +103,34 @@ function dragElement(elmnt) {
 document.addEventListener("DOMContentLoaded", function(){
 	for (let e of document.getElementById("draggable-items").children) {
 		dragElement(e);
+		let attr = e.getAttribute("data-name")
+		if (attr == null) continue;
+		let stored = localStorage.getItem(TYPE+"-"+attr);
+		if (stored == null) continue;
+		
+		let pos = JSON.parse(stored);
+		e.style.left = pos.x;
+		e.style.top = pos.y;
+		e.style.position = "absolute";
 	}
-	let test = document.getElementById("tier-container")
+	let tiers = localStorage.getItem(TYPE+"-tiers");
+	if (tiers != null && tiers != "undefined") {
+		let data = JSON.parse(tiers);
+		let labels = document.getElementsByClassName("tier-label");
+		for (let i = 0; i < labels.length; i++) {
+			if (data[i] != undefined)
+				labels[i].firstElementChild.textContent = data[i]
+		}
+	}
 });
+
+window.onbeforeunload = function() {
+	console.log("before unload")
+	let labels = document.getElementsByClassName("tier-label");
+	let data = [];
+	for (let l of labels) {
+		data.push(l.textContent);
+    }
+	if (data.length > 0)
+		localStorage.setItem(TYPE+"-tiers", JSON.stringify(data));
+}
