@@ -93,9 +93,10 @@ body {
 	color: white;
 	width: 155px;
 	margin-top: 10px;
+	transition: background ease-in-out 0.15s;
 }
 .menu-slider:hover {
-	margin-left: 0;
+	background: #444;
 }
 .menu-slider > img {
 	height: 40px;
