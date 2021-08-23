@@ -68,8 +68,17 @@ body {
 
 #sliding-menu {
 	position: absolute;
-	bottom: 20;
-	right: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 60px;
+    background: #2f2f2f;
+    border-left: 2px solid white;
+    padding-left: 8px;
+	box-shadow: 4px 1px 13px 4px black;
+	transition: width ease-in-out 0.15s;
+}
+#sliding-menu:hover {
 	width: 155px;
 }
 .menu-slider {
@@ -81,10 +90,8 @@ body {
 	border-radius: 10px 0 0 10px;
 	background: #333;
 	color: white;
-	transition: margin-left ease-in-out 0.15s;
 	width: 155px;
 	margin-top: 10px;
-	margin-left: 98px;
 }
 .menu-slider:hover {
 	margin-left: 0;
