@@ -7,6 +7,7 @@ body {
 #main-container {
 	height: 100%;
 	width: 100%;
+	max-width: calc(100% - 72px);
 }
 #tier-container {
 	background-image: linear-gradient(to bottom, red 0%, red 7%, orange 18%, orange 30%, yellow 40%, yellow 46%, #00ff00 54%, #00ff00 63%, #005aff 73%, #005aff 77%, #3e00d4 90%, #3e00d4 100%);
@@ -101,4 +102,7 @@ body {
 	margin-right: 15px;
 	margin-left: 10px;
 	float: left;
+}
+a {
+	text-decoration: none;
 }
