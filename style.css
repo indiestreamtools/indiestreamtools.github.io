@@ -144,7 +144,7 @@ body {
     padding: 0 10px 0 23px;
 }
 .live > img {
-	animation: live .45s ease-in-out forwards infinite;
+	animation: live .85s ease-in-out forwards infinite;
 }
 #twitch-info:hover {
     right: 0 !important;
@@ -216,13 +216,13 @@ body {
 	0% {
 		margin-bottom: 0;
 	}
-	25% {
+	15% {
 		margin-bottom: 7px;
 	}
-	75% {
+	45% {
 		margin-bottom: -7px;
 	}
-	100% {
+	60% {
 		margin-bottom: 0;
 	}
 }
