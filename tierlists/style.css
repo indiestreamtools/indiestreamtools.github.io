@@ -61,3 +61,37 @@ body {
     flex: none;
     cursor: pointer;
 }
+
+#discord-info:hover {
+    right: 0;
+}
+
+#sliding-menu {
+	position: absolute;
+	bottom: 20;
+	right: 0;
+	width: 155px;
+}
+.menu-slider {
+	right: -160px;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+	height: 60px;
+	border-radius: 10px 0 0 10px;
+	background: #333;
+	color: white;
+	transition: margin-left ease-in-out 0.15s;
+	width: 155px;
+	margin-top: 10px;
+	margin-left: 98px;
+}
+.menu-slider:hover {
+	margin-left: 0;
+}
+.menu-slider > img {
+	height: 40px;
+	margin-right: 15px;
+	margin-left: 10px;
+	float: left;
+}

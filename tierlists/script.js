@@ -125,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 window.onbeforeunload = function() {
-	console.log("before unload")
 	let labels = document.getElementsByClassName("tier-label");
 	let data = [];
 	for (let l of labels) {
@@ -133,4 +132,15 @@ window.onbeforeunload = function() {
     }
 	if (data.length > 0)
 		localStorage.setItem(TYPE+"-tiers", JSON.stringify(data));
+}
+
+function resetList() {
+	for (let e of document.getElementById("draggable-items").children) {
+		e.style.left = e.style.top = e.style.position = "";
+	}
+	let deftiers = ["S", "A", "B", "C", "D", "F"]
+	let labels = document.getElementsByClassName("tier-label");
+	for (let i = 0; i < labels.length && i < deftiers.length; i++) {
+		labels[i].firstElementChild.textContent = deftiers[i]
+	}
 }

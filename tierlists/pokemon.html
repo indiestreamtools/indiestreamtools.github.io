@@ -5,6 +5,7 @@
 <script>var TYPE = "pokemon"</script>
 <link rel="stylesheet" href="style.css">
 <script type="text/javascript" src="script.js"></script> 
+<script type="text/javascript" src="snapshot.js"></script> 
 <div id="main-container">
 <div id="tier-container">
 	<div class="tier-row">
@@ -56,5 +57,25 @@
 	<div data-name="830" class="draggable" style='background-image: url("/resources/pokemon/830.png");'></div>
 	<div data-name="845" class="draggable" style='background-image: url("/resources/pokemon/845.png");'></div>
 </div>
+</div>
+<div id="sliding-menu">
+	<a href="/">
+		<div class="menu-slider">
+			<img src="../resources/icons/exit.svg">
+			<span>Back</span>
+		</div>
+	</a>
+	<a onclick="takeSnapshot()">
+		<div class="menu-slider">
+			<img src="../resources/icons/snapshot.svg">
+			<span>Snapshot</span>
+		</div>
+	</a>
+	<a onclick="resetList()">
+		<div class="menu-slider">
+			<img src="../resources/icons/reset.svg">
+			<span>Reset</span>
+		</div>
+	</a>
 </div>
 </html>
