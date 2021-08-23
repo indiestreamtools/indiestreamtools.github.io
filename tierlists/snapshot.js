@@ -37,7 +37,15 @@ function takeSnapshot() {
 		// 137 // 496
 		let ypos = 770 * (Number(d.style.top.slice(0, -1)) / 80)
 		img.onload = function() {
-			context.drawImage(this, xpos, ypos, 82, 82)
+			let xw = 82, yh = 82;
+			if (this.width > this.height) {
+				yh *= this.height / this.width;
+				ypos += (xw-yh)/2
+			} else if (this.width < this.height) {
+				xw *= this.width / this.height;
+				xpos += (yh-xw)/2
+			}
+			context.drawImage(this, xpos, ypos, xw, yh)
 			items -= 1;
 			checkForCompletion();
 		}
