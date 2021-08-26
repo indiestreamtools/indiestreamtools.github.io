@@ -1,13 +1,10 @@
-var first = true;
 function takeSnapshot() {
-	__takeSnapshot()
-	if (first) {// Double snap as workaround, for sometimes not snapshotting on first;
-		setTimeout(__takeSnapshot, 250);
-	}
+	__takeSnapshot(false)
+	setTimeout(__takeSnapshot, 250);
 	first = false;
 }
 
-function __takeSnapshot() {
+function __takeSnapshot(notify = true) {
 	var canvas = document.createElement('canvas');
 	canvas.id     = "canvas";
 	canvas.width  = 645;
@@ -71,6 +68,9 @@ function __takeSnapshot() {
 			setTimeout(function() {
 				canvas.toBlob(blob => navigator.clipboard.write([new ClipboardItem({'image/png': blob})]))
 				// console.log("Clipped");
+				if (notify) {
+					
+				}
 			}, 250) // delay by 100ms I guess?
 		}
 	}
